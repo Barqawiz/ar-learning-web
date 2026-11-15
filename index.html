@@ -18,7 +18,7 @@
     font:18px/1.8 "SF Arabic","Geeza Pro","Noto Naskh Arabic","Segoe UI",Tahoma,sans-serif;
     -webkit-font-smoothing:antialiased;overflow-x:hidden}
   a{color:var(--teal)}
-  img{max-width:100%;display:block}
+  img{max-width:100%;height:auto;display:block}
   .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
   .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 0}
   .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--text);text-decoration:none}
@@ -33,9 +33,16 @@
   .hero .tag{font-size:clamp(19px,3.5vw,23px);color:var(--roof);margin:4px 0 14px;font-weight:600}
   .hero p{margin:0 0 18px;color:var(--muted)}
   .hero .art{border-radius:20px;border:1px solid var(--line);overflow:hidden;background:#cfe9f5}
-  .store{display:inline-block;background:var(--text);color:#fff;border-radius:12px;padding:10px 18px;
-    font-size:16px;text-decoration:none}
-  .store small{display:block;font-size:12px;opacity:.75}
+  .appstore{display:inline-flex;align-items:center;gap:12px;color:#fff;background:#000;border:1px solid #000;
+    border-radius:14px;padding:10px 20px;line-height:1.15;text-decoration:none}
+  .appstore svg{width:28px;height:28px;fill:#fff;flex:none}
+  .appstore .t1{display:block;font-size:12px;font-weight:400}
+  .appstore .t2{display:block;font-size:22px;font-weight:600;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;direction:ltr;text-align:right}
+  .appstore.lg{padding:12px 24px;gap:14px}
+  .appstore.lg svg{width:32px;height:32px}
+  .appstore.lg .t2{font-size:25px}
+  .devices{margin:10px 0 0;font-size:15px;color:var(--muted)}
+  @media(max-width:600px){.nav .appstore{display:none}}
 
   section{margin:52px 0}
   h2{font-size:clamp(25px,4.5vw,32px);margin:0 0 6px}
@@ -51,7 +58,7 @@
   @media(max-width:900px){.rooms{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:580px){.rooms{grid-template-columns:1fr}}
   .room{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
-  .room img{aspect-ratio:16/9;object-fit:cover;width:100%}
+  .room img{aspect-ratio:16/9;object-fit:cover;width:100%;height:auto}
   .room .body{padding:14px 16px 18px}
   .room .num{font-size:14px;color:var(--muted)}
   .room h3{margin:0 0 8px;font-size:21px}
@@ -93,6 +100,7 @@
       <a href="support.html">الدعم</a>
       <a href="privacy.html">الخصوصية</a>
     </div>
+    <a class="appstore" href="https://apps.apple.com/app/id6835077472"><svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268c-.2-37 16.6-65 50.5-85-19-27-47.5-42-85-45-36-3-75 21-89 21-15 0-49-20-76-19-39 .6-75 23-95 58-41 71-10 176 29 234 19 28 42 59 72 58 29-1 40-19 75-19 35 0 45 19 76 18 31-1 51-28 70-56 22-32 31-63 31-65-1-1-60-23-60-90zM262 53c16-20 27-47 24-74-23 1-51 15-68 34-15 17-29 45-25 71 26 2 53-12 69-31z"/></svg><span><span class="t1">نزّله من</span><span class="t2">App Store</span></span></a>
   </nav>
 
   <header class="hero">
@@ -100,9 +108,10 @@
       <h1>بيت الحروف</h1>
       <div class="tag">تعليم القراءة للأطفال من ٤ إلى ٨ سنوات</div>
       <p>تيتا تفتح بيتها لطفلك. في كل غرفة بضعة حروف: يسمع الطفل الحرف مع الفتحة والضمة والكسرة، ويرسمه بإصبعه، ويلعب به، ثم يركّب منه كلمات يقرؤها بنفسه. كل شيء بالعربية الفصحى، ويعمل بلا إنترنت وبلا إعلانات.</p>
-      <span class="store"><small>للآيفون والآيباد</small>قريباً على App Store</span>
+      <a class="appstore lg" href="https://apps.apple.com/app/id6835077472"><svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268c-.2-37 16.6-65 50.5-85-19-27-47.5-42-85-45-36-3-75 21-89 21-15 0-49-20-76-19-39 .6-75 23-95 58-41 71-10 176 29 234 19 28 42 59 72 58 29-1 40-19 75-19 35 0 45 19 76 18 31-1 51-28 70-56 22-32 31-63 31-65-1-1-60-23-60-90zM262 53c16-20 27-47 24-74-23 1-51 15-68 34-15 17-29 45-25 71 26 2 53-12 69-31z"/></svg><span><span class="t1">نزّله من</span><span class="t2">App Store</span></span></a>
+      <p class="devices">للآيفون والآيباد</p>
     </div>
-    <div class="art"><img src="assets/house.jpg" alt="رسم لبيت تيتا مفتوحاً من الأمام، تظهر فيه الغرف: المطبخ وغرفة الجلوس والمكتبة وغرفة الألعاب والشرفة والحديقة" width="1400" height="781"></div>
+    <div class="art"><img src="assets/house.jpg" alt="رسم لبيت تيتا مفتوحاً من الأمام، تظهر فيه الغرف: المطبخ وغرفة الجلوس والمكتبة وغرفة الألعاب والشرفة والحديقة" width="1100" height="614"></div>
   </header>
 
   <section>
@@ -122,7 +131,7 @@
     <div class="rooms">
 
       <article class="room">
-        <img src="assets/room-1.jpg" alt="الحديقة: باب أزرق ونافورة وشجرة برتقال وورد وفانوس" loading="lazy" width="900" height="502">
+        <img src="assets/room-1.jpg" alt="الحديقة: باب أزرق ونافورة وشجرة برتقال وورد وفانوس" loading="lazy" width="720" height="402">
         <div class="body">
           <div class="num">الغرفة ١</div>
           <h3>حديقة البيت</h3>
@@ -133,7 +142,7 @@
       </article>
 
       <article class="room">
-        <img src="assets/room-2.jpg" alt="المطبخ: تفاحة وموز وإبريق لبن وسلة خبز" loading="lazy" width="900" height="502">
+        <img src="assets/room-2.jpg" alt="المطبخ: تفاحة وموز وإبريق لبن وسلة خبز" loading="lazy" width="720" height="402">
         <div class="body">
           <div class="num">الغرفة ٢</div>
           <h3>المطبخ الملوّن</h3>
@@ -143,7 +152,7 @@
       </article>
 
       <article class="room">
-        <img src="assets/room-3.jpg" alt="غرفة الألعاب: دب وأرنب وكرة وطائرة وصندوق" loading="lazy" width="900" height="502">
+        <img src="assets/room-3.jpg" alt="غرفة الألعاب: دب وأرنب وكرة وطائرة وصندوق" loading="lazy" width="720" height="402">
         <div class="body">
           <div class="num">الغرفة ٣</div>
           <h3>غرفة الألعاب</h3>
@@ -153,7 +162,7 @@
       </article>
 
       <article class="room">
-        <img src="assets/room-4.jpg" alt="مجلس العائلة: ساعة وجمل وحصان خشبي وعنب وطبعة يد" loading="lazy" width="900" height="502">
+        <img src="assets/room-4.jpg" alt="مجلس العائلة: ساعة وجمل وحصان خشبي وعنب وطبعة يد" loading="lazy" width="720" height="402">
         <div class="body">
           <div class="num">الغرفة ٤</div>
           <h3>مجلس العائلة</h3>
@@ -163,7 +172,7 @@
       </article>
 
       <article class="room">
-        <img src="assets/room-5.jpg" alt="شرفة السماء ليلاً: قمر وغيمة ورمان وذرة ومنظار" loading="lazy" width="900" height="502">
+        <img src="assets/room-5.jpg" alt="شرفة السماء ليلاً: قمر وغيمة ورمان وذرة ومنظار" loading="lazy" width="720" height="402">
         <div class="body">
           <div class="num">الغرفة ٥</div>
           <h3>شرفة السماء</h3>
@@ -173,7 +182,7 @@
       </article>
 
       <article class="room">
-        <img src="assets/room-6.jpg" alt="مكتبة الحكايات: كتب وهدية وظرف وثعلب وضفدع" loading="lazy" width="900" height="502">
+        <img src="assets/room-6.jpg" alt="مكتبة الحكايات: كتب وهدية وظرف وثعلب وضفدع" loading="lazy" width="720" height="402">
         <div class="body">
           <div class="num">الغرفة ٦</div>
           <h3>مكتبة الحكايات</h3>
@@ -215,7 +224,7 @@
   <section class="en" lang="en">
     <h2>In English</h2>
     <p>Letter House (<bdi dir="rtl">بيت الحروف</bdi>) is an Arabic reading game for children aged 4 to 8, for iPhone and iPad. Children learn the 28 Arabic letters, the short vowels and their first words across six rooms of a grandmother's house, with letter tracing, short games and a story in every room. It works offline and has no ads. The app itself is in Arabic.</p>
-    <p><a href="support.html#en">Support</a> &middot; <a href="privacy.html#en">Privacy Policy</a> &middot; <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use (EULA)</a> &middot; <a href="mailto:intellinode.comp@gmail.com">intellinode.comp@gmail.com</a></p>
+    <p><a href="https://apps.apple.com/app/id6835077472">Download on the App Store</a> &middot; <a href="support.html#en">Support</a> &middot; <a href="privacy.html#en">Privacy Policy</a> &middot; <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use (EULA)</a> &middot; <a href="mailto:intellinode.comp@gmail.com">intellinode.comp@gmail.com</a></p>
   </section>
 
   <footer>
