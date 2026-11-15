@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>بيت الحروف: تعليم القراءة للأطفال</title>
+<meta name="description" content="لعبة عربية تعلّم الأطفال من ٤ إلى ٨ سنوات الحروف والحركات والقراءة، في ست غرف من بيت تيتا. تعمل بلا إنترنت وبلا إعلانات.">
+<link rel="icon" href="assets/icon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:title" content="بيت الحروف">
+<meta property="og:description" content="الحروف العربية للأطفال: حروف وحركات وكلمات أولى، في بيت من ست غرف.">
+<meta property="og:image" content="assets/house.jpg">
+<style>
+  :root{--bg:#FBF4E8;--panel:#F4E8D4;--line:#E5D4B8;--text:#3A2E28;--muted:#76675B;
+    --teal:#2F7F82;--roof:#C9643F;--gold:#E8AE3C;--tile:#FFF8EA}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font:18px/1.8 "SF Arabic","Geeza Pro","Noto Naskh Arabic","Segoe UI",Tahoma,sans-serif;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:var(--teal)}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 0}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--text);text-decoration:none}
+  .brand img{width:40px;height:40px;border-radius:10px;border:1px solid var(--line)}
+  .nav .links{display:flex;gap:18px;font-size:16px}
+  .nav .links a{color:var(--muted);text-decoration:none}
+  .nav .links a:hover{color:var(--text)}
+
+  .hero{display:grid;grid-template-columns:1fr 1.15fr;gap:36px;align-items:center;padding:26px 0 10px}
+  @media(max-width:820px){.hero{grid-template-columns:1fr;gap:20px}}
+  .hero h1{font-size:clamp(38px,7vw,56px);line-height:1.2;margin:0}
+  .hero .tag{font-size:clamp(19px,3.5vw,23px);color:var(--roof);margin:4px 0 14px;font-weight:600}
+  .hero p{margin:0 0 18px;color:var(--muted)}
+  .hero .art{border-radius:20px;border:1px solid var(--line);overflow:hidden;background:#cfe9f5}
+  .store{display:inline-block;background:var(--text);color:#fff;border-radius:12px;padding:10px 18px;
+    font-size:16px;text-decoration:none}
+  .store small{display:block;font-size:12px;opacity:.75}
+
+  section{margin:52px 0}
+  h2{font-size:clamp(25px,4.5vw,32px);margin:0 0 6px}
+  .intro{color:var(--muted);margin:0 0 22px;max-width:720px}
+
+  .learn{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 28px;padding:0;margin:0;list-style:none}
+  @media(max-width:640px){.learn{grid-template-columns:1fr}}
+  .learn li{border-right:4px solid var(--gold);padding:4px 14px 4px 0}
+  .learn b{display:block}
+  .learn span{color:var(--muted);font-size:16px}
+
+  .rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:900px){.rooms{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:580px){.rooms{grid-template-columns:1fr}}
+  .room{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+  .room img{aspect-ratio:16/9;object-fit:cover;width:100%}
+  .room .body{padding:14px 16px 18px}
+  .room .num{font-size:14px;color:var(--muted)}
+  .room h3{margin:0 0 8px;font-size:21px}
+  .letters{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px;padding:0;list-style:none}
+  .letters li{min-width:40px;height:40px;display:grid;place-items:center;background:var(--tile);
+    border:1px solid var(--line);border-radius:10px;font-size:22px;font-weight:700;padding:0 6px}
+  .room p{margin:0;color:var(--muted);font-size:16px;line-height:1.7}
+  .free{display:inline-block;margin-top:10px;font-size:14px;color:var(--teal);font-weight:600}
+
+  .games{columns:2;column-gap:32px;padding:0;margin:0;list-style:none}
+  @media(max-width:640px){.games{columns:1}}
+  .games li{break-inside:avoid;margin:0 0 12px}
+  .games b{color:var(--text)}
+  .games span{color:var(--muted);font-size:16px}
+
+  .parents{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:700px){.parents{grid-template-columns:1fr}}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+  .box h3{margin:0 0 4px;font-size:18px}
+  .box p{margin:0;color:var(--muted);font-size:16px}
+
+  .en{direction:ltr;text-align:left;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:16px;line-height:1.7;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+  .en h2{font-size:20px}
+  .en p{margin:6px 0;color:var(--muted)}
+
+  footer{border-top:1px solid var(--line);margin-top:48px;padding:24px 0 50px;color:var(--muted);font-size:15px}
+  footer .row{display:flex;flex-wrap:wrap;gap:10px 18px;justify-content:space-between;align-items:center}
+  footer a{color:var(--muted)}
+  footer a:hover{color:var(--text)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="nav">
+    <a class="brand" href="./"><img src="assets/icon.png" alt="">بيت الحروف</a>
+    <div class="links">
+      <a href="support.html">الدعم</a>
+      <a href="privacy.html">الخصوصية</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <h1>بيت الحروف</h1>
+      <div class="tag">تعليم القراءة للأطفال من ٤ إلى ٨ سنوات</div>
+      <p>تيتا تفتح بيتها لطفلك. في كل غرفة بضعة حروف: يسمع الطفل الحرف مع الفتحة والضمة والكسرة، ويرسمه بإصبعه، ويلعب به، ثم يركّب منه كلمات يقرؤها بنفسه. كل شيء بالعربية الفصحى، ويعمل بلا إنترنت وبلا إعلانات.</p>
+      <span class="store"><small>للآيفون والآيباد</small>قريباً على App Store</span>
+    </div>
+    <div class="art"><img src="assets/house.jpg" alt="رسم لبيت تيتا مفتوحاً من الأمام، تظهر فيه الغرف: المطبخ وغرفة الجلوس والمكتبة وغرفة الألعاب والشرفة والحديقة" width="1400" height="781"></div>
+  </header>
+
+  <section>
+    <h2>ماذا يتعلّم طفلك</h2>
+    <p class="intro">بنينا اللعبة على الترتيب الذي يتعلّم به الطفل القراءة عادة: الصوت أولاً، ثم الشكل، ثم الكلمة.</p>
+    <ul class="learn">
+      <li><b>الحروف الثمانية والعشرون</b><span>اسم الحرف وصوته وشكله، مع كلمة من غرفته تبدأ به.</span></li>
+      <li><b>الحركات</b><span>الفتحة والضمة والكسرة، وكيف يتغيّر صوت الحرف معها.</span></li>
+      <li><b>أشكال الحرف في الكلمة</b><span>في أولها ووسطها وآخرها، لطفل السادسة فما فوق.</span></li>
+      <li><b>القراءة</b><span>تركيب الأصوات في كلمات، ثم جمل قصيرة وحكاية في كل غرفة.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>غرف البيت</h2>
+    <p class="intro">ست غرف، ولكل غرفة حروفها. الأشياء في الغرفة تبدأ بحروفها، فالطفل في الحديقة يجد الباب والشجرة والنافورة والفانوس والوردة.</p>
+    <div class="rooms">
+
+      <article class="room">
+        <img src="assets/room-1.jpg" alt="الحديقة: باب أزرق ونافورة وشجرة برتقال وورد وفانوس" loading="lazy" width="900" height="502">
+        <div class="body">
+          <div class="num">الغرفة ١</div>
+          <h3>حديقة البيت</h3>
+          <ul class="letters"><li>ب</li><li>ش</li><li>ن</li><li>ف</li><li>و</li></ul>
+          <p>باب، شجرة، نافورة، فانوس، وردة. أول غرفة يدخلها الطفل، وفيها يتعرّف على طريقة اللعب.</p>
+          <span class="free">حرفا الباء والشين مجانيان</span>
+        </div>
+      </article>
+
+      <article class="room">
+        <img src="assets/room-2.jpg" alt="المطبخ: تفاحة وموز وإبريق لبن وسلة خبز" loading="lazy" width="900" height="502">
+        <div class="body">
+          <div class="num">الغرفة ٢</div>
+          <h3>المطبخ الملوّن</h3>
+          <ul class="letters"><li>ت</li><li>ل</li><li>م</li><li>خ</li><li>ز</li></ul>
+          <p>تفاحة، لبن، موز، خبز، زيتون. أشياء يعرفها الطفل من مطبخ بيته.</p>
+        </div>
+      </article>
+
+      <article class="room">
+        <img src="assets/room-3.jpg" alt="غرفة الألعاب: دب وأرنب وكرة وطائرة وصندوق" loading="lazy" width="900" height="502">
+        <div class="body">
+          <div class="num">الغرفة ٣</div>
+          <h3>غرفة الألعاب</h3>
+          <ul class="letters"><li>د</li><li>أ</li><li>ك</li><li>ط</li><li>ص</li></ul>
+          <p>دب، أرنب، كرة، طائرة، صندوق. وهنا أول لقاء للطفل مع الألف.</p>
+        </div>
+      </article>
+
+      <article class="room">
+        <img src="assets/room-4.jpg" alt="مجلس العائلة: ساعة وجمل وحصان خشبي وعنب وطبعة يد" loading="lazy" width="900" height="502">
+        <div class="body">
+          <div class="num">الغرفة ٤</div>
+          <h3>مجلس العائلة</h3>
+          <ul class="letters"><li>س</li><li>ج</li><li>ح</li><li>ع</li><li>ي</li></ul>
+          <p>ساعة، جمل، حصان، عنب، يد. حروف متقاربة الشكل مثل الجيم والحاء، يتعلّم الطفل التفريق بينها.</p>
+        </div>
+      </article>
+
+      <article class="room">
+        <img src="assets/room-5.jpg" alt="شرفة السماء ليلاً: قمر وغيمة ورمان وذرة ومنظار" loading="lazy" width="900" height="502">
+        <div class="body">
+          <div class="num">الغرفة ٥</div>
+          <h3>شرفة السماء</h3>
+          <ul class="letters"><li>ق</li><li>غ</li><li>ر</li><li>ذ</li></ul>
+          <p>قمر، غيمة، رمّان، ذرة. سطح البيت في الليل، بين النجوم والأضواء.</p>
+        </div>
+      </article>
+
+      <article class="room">
+        <img src="assets/room-6.jpg" alt="مكتبة الحكايات: كتب وهدية وظرف وثعلب وضفدع" loading="lazy" width="900" height="502">
+        <div class="body">
+          <div class="num">الغرفة ٦</div>
+          <h3>مكتبة الحكايات</h3>
+          <ul class="letters"><li>هـ</li><li>ظ</li><li>ث</li><li>ض</li></ul>
+          <p>هدية، ظرف، ثعلب، ضفدع. آخر الحروف، ومنها الضاد التي يصعب نطقها على كثير من الأطفال.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>الألعاب في كل حرف</h2>
+    <p class="intro">لكل حرف مجموعة ألعاب قصيرة، وتتغيّر صعوبتها حسب عمر الطفل.</p>
+    <ul class="games">
+      <li><b>ارسم الحرف</b> <span>يتتبّع الطفل الحرف بإصبعه بخط واحد ويضع نقاطه.</span></li>
+      <li><b>فقاعات الحرف</b> <span>فقاعات تصعد، والطفل يلتقط التي فيها الحرف الصحيح.</span></li>
+      <li><b>أطعم فلفول</b> <span>يختار الحرف بحركته الصحيحة ليطعم صديقه الثعلب.</span></li>
+      <li><b>اسمع واختر</b> <span>يسمع صوتاً ويختار الحرف أو الكلمة.</span></li>
+      <li><b>صيّاد الأشكال</b> <span>يبحث عن شكل الحرف بين حروف تشبهه.</span></li>
+      <li><b>ركّب الكلمة</b> <span>يضع الحروف في مكانها ليكوّن كلمة.</span></li>
+      <li><b>اقرأ وطابق</b> <span>يقرأ الكلمة ويصلها بصورتها.</span></li>
+      <li><b>مسرح الحكاية</b> <span>حكاية قصيرة في الغرفة يكمل الطفل كلماتها ويجيب عن أسئلتها.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>للأهل</h2>
+    <div class="parents">
+      <div class="box"><h3>بلا إنترنت وبلا إعلانات</h3><p>تعمل اللعبة كاملة دون اتصال، ولا تعرض أي إعلان.</p></div>
+      <div class="box"><h3>صوت عربي فصيح</h3><p>كل حرف وكلمة وتعليمات مسموعة بالتشكيل الكامل، فيفهم الطفل المطلوب قبل أن يتقن القراءة.</p></div>
+      <div class="box"><h3>على قدّ عمر الطفل</h3><p>من ٤ إلى ٥ سنوات: الحرف منفرداً وصوته. من ٦ إلى ٨ سنوات: أشكال الحرف في الكلمة وقراءة أكثر. ويمكن إضافة طفلين.</p></div>
+      <div class="box"><h3>رمز للوالدين</h3><p>الشراء واستعادة المشتريات لا يتمّان إلا بعد إدخال رمز من ثلاثة أرقام يُكتب بالكلمات، حتى لا يشتري الطفل بالخطأ.</p></div>
+      <div class="box"><h3>جرّبها مجاناً</h3><p>حرفا الباء والشين مفتوحان مجاناً مع ثلاث من ألعابهما. وتفتح بقية البيت باشتراك شهري أو سنوي، أو بشراء واحد مدى الحياة. يظهر السعر بعملة بلدك قبل الدفع.</p></div>
+      <div class="box"><h3>بيانات طفلك على جهازك</h3><p>اسم الطفل اختياري، ويبقى هو وتقدّمه على الجهاز فقط. لا حسابات ولا تسجيل. التفاصيل في <a href="privacy.html">سياسة الخصوصية</a>.</p></div>
+    </div>
+  </section>
+
+  <section class="en" lang="en">
+    <h2>In English</h2>
+    <p>Letter House (<bdi dir="rtl">بيت الحروف</bdi>) is an Arabic reading game for children aged 4 to 8, for iPhone and iPad. Children learn the 28 Arabic letters, the short vowels and their first words across six rooms of a grandmother's house, with letter tracing, short games and a story in every room. It works offline and has no ads. The app itself is in Arabic.</p>
+    <p><a href="support.html#en">Support</a> &middot; <a href="privacy.html#en">Privacy Policy</a> &middot; <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use (EULA)</a> &middot; <a href="mailto:intellinode.comp@gmail.com">intellinode.comp@gmail.com</a></p>
+  </section>
+
+  <footer>
+    <div class="row">
+      <div>&copy; ٢٠٢٦ Intelli &middot; بيت الحروف</div>
+      <div>
+        <a href="privacy.html">سياسة الخصوصية</a> &nbsp;&middot;&nbsp;
+        <a href="support.html">الدعم</a> &nbsp;&middot;&nbsp;
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">شروط الاستخدام</a> &nbsp;&middot;&nbsp;
+        <a href="mailto:intellinode.comp@gmail.com">تواصل معنا</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
